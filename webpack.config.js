@@ -2,7 +2,7 @@
  * @Author: kim.chen 
  * @Date: 2018-10-13 15:21:56 
  * @Last Modified by: kim.chen
- * @Last Modified time: 2018-10-15 19:05:50
+ * @Last Modified time: 2018-10-18 19:59:48
  */
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -34,7 +34,8 @@ var config = {
         'jquery': 'window.jQuery'
     },
     module: {
-        loaders: [{
+        loaders: [
+            {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader")
             },
@@ -42,7 +43,20 @@ var config = {
                 test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/,
                 loader: 'url-loader?limit=100&name=resource/[name].[ext]'
             },
+            {
+                test: /\.string$/,
+                loader: 'html-loader'
+            },
         ]
+    },
+    resolve: {
+        alias: {
+            node_modules: __dirname + '/node_modules',
+            util: __dirname + '/src/util',
+            page: __dirname + '/src/page',
+            service: __dirname + '/src/service',
+            image: __dirname + '/src/image'
+        }
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({ //公共模块

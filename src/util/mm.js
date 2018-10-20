@@ -2,7 +2,7 @@
  * @Author: kim.chen 
  * @Date: 2018-10-15 19:34:57 
  * @Last Modified by: kim.chen
- * @Last Modified time: 2018-10-16 19:29:19
+ * @Last Modified time: 2018-10-20 13:02:45
  */
 var Hogan = require('hogan.js');
 var conf = {
@@ -25,7 +25,7 @@ var _mm = {
                 } else if (res.status === 10) {
                     // 没有登录状态
                     _this.doLogin();
-                } else if (param.status === 1) {
+                } else if (res.status === 1) {
                     typeof param.error === 'function' && param.error(res.msg);
                 }
 
@@ -63,11 +63,11 @@ var _mm = {
         alert(msg || '哪里不对了~');
     },
     // 字段的验证，支持非空判断，手机，邮箱，格式
-    vilidate: function(value,type){
+    validate: function(value,type){
         var value =$.trim(value);
         // 非空验证
         if('require' === type){
-            return !!value;
+            return !value;
         }
         // 手机号验证
         if('phone' === type){
@@ -80,7 +80,7 @@ var _mm = {
     },
     // 统一登录处理
     doLogin: function () {
-        window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+        window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
     },
     goHome: function(){
         window.location.href = './index.html'

@@ -2,7 +2,7 @@
  * @Author: kim.chen 
  * @Date: 2018-10-18 18:59:09 
  * @Last Modified by: kim.chen
- * @Last Modified time: 2018-10-20 13:54:49
+ * @Last Modified time: 2018-10-20 15:25:05
  */
 require('./index.css');
 
@@ -33,4 +33,4 @@ var nav = {
 
     }
 }
-nav.init();
+module.exports = nav.init();

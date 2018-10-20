@@ -2,7 +2,7 @@
  * @Author: kim.chen 
  * @Date: 2018-10-16 19:40:17 
  * @Last Modified by: kim.chen
- * @Last Modified time: 2018-10-16 20:01:39
+ * @Last Modified time: 2018-10-20 15:34:33
  */
 
 /* css reset */
@@ -39,6 +39,23 @@ input[type='checkout'] {
     margin: 0 auto;
     position: relative;
     /* 清除浮动 */
+    overflow: hidden;
+}
+
+.panel{
+    padding:10px;
+    margin-bottom: 10px;
+    background: #fff;
+}
+.panel .panel-title{
+    padding:10px;
+    font-size: 14px;
+    color:#666;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+.panel .panel-body{
+    padding:10px;
     overflow: hidden;
 }
 
@@ -98,3 +115,4 @@ input[type='checkout'] {
     background: url(../../image//icon/loading.gif) no-repeat;
     opacity: 0.5;
 }
+

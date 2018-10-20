@@ -2,7 +2,7 @@
  * @Author: kim.chen 
  * @Date: 2018-10-18 19:35:08 
  * @Last Modified by: kim.chen
- * @Last Modified time: 2018-10-18 20:08:11
+ * @Last Modified time: 2018-10-20 16:57:44
  */
 require('./index.css');
 
@@ -23,9 +23,9 @@ var navSide = {
                 href: './order-list.html'
             },
             {
-                name: 'pass-update',
+                name: 'user-pass-update',
                 desc: '修改密码',
-                href: './pass-update.html'
+                href: './user-pass-update.html'
             },
             {
                 name: 'about',

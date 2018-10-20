@@ -2,7 +2,7 @@
  * @Author: kim.chen 
  * @Date: 2018-10-20 12:32:46 
  * @Last Modified by: kim.chen
- * @Last Modified time: 2018-10-20 16:47:34
+ * @Last Modified time: 2018-10-20 17:11:54
  */
 var _mm = require('util/mm.js');
 var _user = {
@@ -106,9 +106,19 @@ var _user = {
         resolve(data)
     },
     // 更新个人信息
-    updateUserInfo:function (userInfo, resolve, reject) {
+    updateUserInfo: function (userInfo, resolve, reject) {
         _mm.request({
             url: _mm.getServerUrl('/user/update_information.do'),
+            data: userInfo,
+            method: 'POST',
+            success: resolve,
+            error: reject
+        })
+    },
+    // 修改密码
+    updatePassword: function (userInfo, resolve, reject) {
+        _mm.request({
+            url: _mm.getServerUrl('/user/reset_password.do'),
             data: userInfo,
             method: 'POST',
             success: resolve,

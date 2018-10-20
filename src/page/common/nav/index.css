@@ -1,0 +1,29 @@
+/*
+ * @Author: kim.chen 
+ * @Date: 2018-10-18 18:29:23 
+ * @Last Modified by: kim.chen
+ * @Last Modified time: 2018-10-18 18:42:46
+ */
+.nav{
+    background: #eee;
+    height: 30px;
+    line-height: 30px;
+}
+/* 用户部分 */
+.nav .user{
+    float: left;
+}
+.nav .user .link{
+    margin-right: 5px;
+}
+.nav .user.login{
+    display: none;
+}
+/* 导航连接部分 */
+.nav .nav-list{
+    float: right;
+}
+.nav .nav-list .nav-item{
+    display: inline-block;
+    margin-left: 5px;
+}

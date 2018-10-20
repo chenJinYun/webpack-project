@@ -2,7 +2,7 @@
  * @Author: kim.chen 
  * @Date: 2018-10-20 12:32:46 
  * @Last Modified by: kim.chen
- * @Last Modified time: 2018-10-20 13:27:46
+ * @Last Modified time: 2018-10-20 15:08:00
  */
 var _mm = require('util/mm.js');
 var _user = {
@@ -43,6 +43,38 @@ var _user = {
     checkLogin: function (resolve, reject) {
         _mm.request({
             url: _mm.getServerUrl('/user/get_user_info.do'),
+            method: 'POST',
+            success: resolve,
+            error: reject
+        })
+    },
+    // 获取用户问题
+    getQuestion: function (username, resolve, reject) {
+        _mm.request({
+            url: _mm.getServerUrl('/user/forget_get_question.do'),
+            data: {
+                username: username
+            },
+            method: 'POST',
+            success: resolve,
+            error: reject
+        })
+    },
+    // 获取token
+    checkAnswer: function (userInfo, resolve, reject) {
+        _mm.request({
+            url: _mm.getServerUrl('/user/forget_check_answer.do'),
+            data: userInfo,
+            method: 'POST',
+            success: resolve,
+            error: reject
+        })
+    },
+    // 重置密码
+    resetPassword: function (userInfo, resolve, reject) {
+        _mm.request({
+            url: _mm.getServerUrl('/user/forget_reset_password.do'),
+            data: userInfo,
             method: 'POST',
             success: resolve,
             error: reject

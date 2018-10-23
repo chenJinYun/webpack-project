@@ -1,0 +1,19 @@
+/*
+ * @Author: kim.chen 
+ * @Date: 2018-10-23 18:40:32 
+ * @Last Modified by: kim.chen
+ * @Last Modified time: 2018-10-23 18:41:00
+ */
+ /* banner */
+.banner {
+    position: relative;
+    overflow: auto;
+}
+
+.banner li {
+    list-style: none;
+}
+
+.banner ul li {
+    float: left;
+}

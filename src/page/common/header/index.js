@@ -2,7 +2,7 @@
  * @Author: kim.chen 
  * @Date: 2018-10-18 18:59:09 
  * @Last Modified by: kim.chen
- * @Last Modified time: 2018-10-18 19:24:00
+ * @Last Modified time: 2018-10-23 19:55:39
  */
 require('./index.css');
 
@@ -10,6 +10,7 @@ var _mm = require('util/mm.js');
 // 头部
 var header = {
     init: function () {
+        this.onLoad();
         this.bindEvent();
     },
     onLoad: function () {
@@ -24,7 +25,7 @@ var header = {
             _this.searchSubmit();
         });
         // 输入回车提交
-        $("#search-btn").keyup(function (e) {
+        $("#search-input").keyup(function (e) {
             // 13 是回车
             if (e.keyCode === 13) {
                 _this.searchSubmit();

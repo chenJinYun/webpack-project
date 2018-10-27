@@ -1,7 +1,7 @@
 {{#list}}
 <li class="p-item">
     <div class="p-img-con">
-        <a href="/detail.html?productId={{id}}" target="_blank" class="link">
+        <a href="./detail.html?productId={{id}}" target="_blank" class="link">
             <img src="{{imageHost}}{{mainImage}}" class="p-img" alt="{{name}}">
         </a>
     </div>
@@ -9,7 +9,10 @@
         <span class="p-price">￥{{price}}</span>
     </div>
     <div class="p-name-con">
-        <a href="/detail.html?productId={{id}}" class="p-name">{{name}}</a>
+        <a href="./detail.html?productId={{id}}" class="p-name">{{name}}</a>
     </div>
 </li>
+{{/list}}
+{{^list}}
+<p class="err-tip">很抱歉，是在找不到你要的商品！</p>
 {{/list}}

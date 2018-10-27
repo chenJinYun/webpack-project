@@ -2,14 +2,14 @@
  * @Author: kim.chen 
  * @Date: 2018-10-23 19:13:42 
  * @Last Modified by: kim.chen
- * @Last Modified time: 2018-10-23 20:00:21
+ * @Last Modified time: 2018-10-27 10:19:49
  */
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
 require('./index.css')
-var navSide = require('page/common/nav-side/index.js');
 var _product = require('service/product-service.js');
 var _mm = require('util/mm.js');
+var Pagination = require('util/pagination/index.js');
 var templateIndex = require('./index.string');
 
 var page = {
@@ -30,10 +30,10 @@ var page = {
         this.loadList()
     },
     bindEvent: function () {
-        var _this=this;
+        var _this = this;
         // 排序的点击事件
-        $('.sort-title').click(function(){
-            
+        $('.sort-title').click(function () {
+
         })
     },
     // 加载list
@@ -46,14 +46,30 @@ var page = {
                 list: res.list
             })
             $('.p-list-con').html(listHtml);
-            _this.loadPagination(res.pageNum,res.pages);
+            _this.loadPagination({
+                hasPreviousPage: res.hasPreviousPage,
+                prePage: res.prePage,
+                hasNextPage: res.hasNextPage,
+                nextPage: res.nextPage,
+                pageNum: res.pageNum,
+                pages: res.pages
+            });
         }, function (err) {
             _mm.errorTips(err);
         })
     },
     // 分页
-    loadPagination:function(pageNum,pages){
-        
+    loadPagination: function (pageInfo) {
+        let _this = this;
+        this.pagination ? '' : (this.pagination = new Pagination());
+        this.pagination.render($.extend({}, pageInfo, {
+            container: $('.pagination'),
+            onSelectPage: function (pageNum) {
+                _this.data.listParam.pageNum = pageNum;
+                _this.loadList();
+            }
+        }))
+
     }
 }
 $(function () {

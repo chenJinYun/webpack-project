@@ -2,7 +2,7 @@
  * @Author: kim.chen 
  * @Date: 2018-10-13 15:27:49 
  * @Last Modified by: kim.chen
- * @Last Modified time: 2018-11-03 14:15:29
+ * @Last Modified time: 2018-11-03 14:43:23
  */
 require('page/common/nav/index.js');
 require('page/common/header/index.js');
@@ -22,7 +22,7 @@ var page = {
     },
     onLoad: function () {
         navSide.init({
-            name: 'order-list'
+            name: 'order-detail'
         });
         this.loadDetail();
 

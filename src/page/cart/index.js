@@ -2,7 +2,7 @@
  * @Author: kim.chen 
  * @Date: 2018-10-27 10:18:42 
  * @Last Modified by: kim.chen
- * @Last Modified time: 2018-10-27 15:45:28
+ * @Last Modified time: 2018-10-29 18:24:09
  */
 require('page/common/header/index.js');
 require('./index.css')
@@ -122,7 +122,7 @@ var page = {
         $(document).on('click', '.btn-submit', function () {
             // 总价>0就进行提交
             if (_this.data.cartInfo && _this.data.cartInfo.cartTotalPrice > 0) {
-                window.location.href = './confirm.html'
+                window.location.href = './order-confirm.html'
             } else {
                 _mm.errorTips('请选择商品后再提交！')
             }

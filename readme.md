@@ -73,3 +73,29 @@
 
     4、请求支付信息，检查订单状态接口
 
+
+### 生产
+    适配
+    favicon
+    dns-perfetch
+
+### util
+	1、获取url参数
+	2、分页工具
+	3、ajax请求封装
+
+### 采用分层结构：view -> page -> service
+
+### webpack.config.js 和 util的东西比较重要
+
+### SEo优化：
+    1、搜索引擎的排名规则
+    2、衡量指标：关键词，收录量
+    3、技巧：增加页面数量、减少页面层级、关键词密度、高质量友链、分析竞对、SEO数据监控
+    4、关键词：高频词
+
+### 访问数据统计：https://tongji.baidu.com/sc-web/26716511/home/site/getjs?siteId=12749873
+    1、访问量：pv/uv/vv
+    2、数据来源
+    3、搜索关键字
+    4、设备信息
